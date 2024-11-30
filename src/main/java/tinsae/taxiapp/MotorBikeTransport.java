@@ -4,7 +4,7 @@ package tinsae.taxiapp;
  * Boat transport implements Transport
  * @author Kahsay Tinsae Ghilay
  */
-public class MotorBikeTransport implements Transport {
+public class MotorBikeTransport extends Transport {
     /**
      * transport method
      */

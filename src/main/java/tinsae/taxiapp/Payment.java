@@ -4,7 +4,7 @@ package tinsae.taxiapp;
  * Payment base class
  * @author Kahsay Tinsae Ghilay
  */
-interface Payment {
+public interface Payment {
 
     /**
      * Pay method

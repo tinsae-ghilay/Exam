@@ -11,7 +11,6 @@ public class BoatTransport  extends   Transport{
      */
     @Override
     public void transport() {
-
         System.out.println("Transporting by boat");
     }
 }

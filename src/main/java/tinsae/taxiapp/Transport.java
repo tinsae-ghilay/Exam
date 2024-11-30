@@ -5,7 +5,7 @@ package tinsae.taxiapp;
  * Transport base class
  */
 
-abstract class Transport {
+public abstract class Transport {
 
     private Payment payment;
 
@@ -34,5 +34,5 @@ abstract class Transport {
 
     public void acceptPayment(){
         this.payment.pay();
-    };
+    }
 }
