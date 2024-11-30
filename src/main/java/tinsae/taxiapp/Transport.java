@@ -7,5 +7,8 @@ package tinsae.taxiapp;
 
 public interface Transport {
 
+    /**
+     * transport method
+     */
     void transport();
 }
