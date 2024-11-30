@@ -5,10 +5,34 @@ package tinsae.taxiapp;
  * Transport base class
  */
 
-public interface Transport {
+abstract class Transport {
 
+    private Payment payment;
+
+    Transport(){
+
+    }
+
+    public void setPayment(Payment payment) {
+        this.payment = payment;
+    }
+    public Payment getPayment() {
+        return payment;
+    }
+
+    /**
+     * template method transport can be implemented in sub classes
+     */
+    public void run(){
+        transport();
+        acceptPayment();
+    }
     /**
      * transport method
      */
-    void transport();
+    abstract void transport();
+
+    public void acceptPayment(){
+        this.payment.pay();
+    };
 }
