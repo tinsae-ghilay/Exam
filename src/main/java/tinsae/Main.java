@@ -1,15 +1,16 @@
 package tinsae;
 
+import org.w3c.dom.ls.LSOutput;
 import tinsae.taxiapp.CreditCardPayment;
 import tinsae.taxiapp.OrderRide;
+import tinsae.taxiapp.PayPalPayment;
 import tinsae.taxiapp.Transport;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
 
-
+        System.out.println("++++++++++++++++++ NEW ORDER +++++++++++++++++++++++++++++");
         // taxi transport service is a factory method pattern
         OrderRide orderRide = new OrderRide();
         // taxi transport produces a Transport mode any kind of product that extends Transport
@@ -18,6 +19,20 @@ public class Main {
         transport.setPayment(new CreditCardPayment());
         // run method in Transport is a Template method
         transport.run();
+
+        System.out.println("\n+++++++++++++++++++ ANOTHER ORDER ++++++++++++++++++++++++\n");
+
+        // another ride
+        OrderRide orderRide2 = new OrderRide();
+        Transport transport2 = orderRide2.getTransport("Motor bike");
+        transport2.setPayment(new PayPalPayment());
+        transport2.run();
+
+        System.out.println("\n+++++++++++++++++++ ANOTHER ORDER ++++++++++++++++++++++++\n");
+        OrderRide orderRide3 = new OrderRide();
+        Transport transport3 = orderRide3.getTransport("taxi");
+        transport3.setPayment(new CreditCardPayment());
+        transport3.run();
 
     }
 }

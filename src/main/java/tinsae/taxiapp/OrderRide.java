@@ -2,7 +2,7 @@ package tinsae.taxiapp;
 
 /**
  * Ride ordering service uses factory method to order transport based on parameter provided
- * @author Kahsay Tinsae Ghilay
+ * @author Kahsay Tinsae ghilay
  */
 public class OrderRide {
 
@@ -16,7 +16,7 @@ public class OrderRide {
         return switch (transport.toLowerCase()) {
             case "boat" -> new BoatTransport();
             case "motor bike" -> new MotorBikeTransport();
-            default -> null;
+            default -> new TaxiTransport();
         };
     }
 }
