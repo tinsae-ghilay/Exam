@@ -1,0 +1,6 @@
+I chose factory method for the creation of Transport classes
+ This allows me to keep it's implementation unchanged even if I add another mode of transport to the fleet.
+this way my app can be addapted to implement any kind of Transprrt without having to change much of the code. jut the new transport implementation and add a case in the factory method for it and that is done.
+The client doesnt have to know the implementation of each transport type. just how to access one,thus decoupling instatiation from implementation.
+
+For the Tranport payment relationship. I opted for a template method, because I thought there are rules to follow if this tranport proccess is to complete without problems. the transport must be done, and payment must be done. and in most casese in the right order. transport the client first and then ask for payment. thus in the run function of Transport transport is done and payment is then executed. each transport mode overrides its transport method. giving the freedom of extension without changing the base class 
