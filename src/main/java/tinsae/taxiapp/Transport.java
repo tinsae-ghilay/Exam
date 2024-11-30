@@ -21,18 +21,25 @@ public abstract class Transport {
     }
 
     /**
-     * template method transport can be implemented in sub classes
+     * template method run calls the necessary steps for the transport to complete
      */
     public void run(){
         transport();
         acceptPayment();
     }
     /**
-     * transport method
+     * transport method is an abstract method that can be overridden by subclasses
      */
     abstract void transport();
 
-    public void acceptPayment(){
-        this.payment.pay();
+    /**
+     * this is not needed to be overridden
+     */
+    private void acceptPayment(){
+        try{
+            this.payment.pay();
+        }catch (NullPointerException e){
+            System.out.println("Payment not accepted: " + e.getMessage());
+        }
     }
 }

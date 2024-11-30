@@ -1,8 +1,7 @@
 package tinsae;
 
-import tinsae.taxiapp.BoatTransport;
 import tinsae.taxiapp.CreditCardPayment;
-import tinsae.taxiapp.TaxiOrderService;
+import tinsae.taxiapp.OrderRide;
 import tinsae.taxiapp.Transport;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -12,9 +11,9 @@ public class Main {
 
 
         // taxi transport service is a factory method pattern
-        TaxiOrderService taxiOrderService = new TaxiOrderService();
+        OrderRide orderRide = new OrderRide();
         // taxi transport produces a Transport mode any kind of product that extends Transport
-        Transport transport = taxiOrderService.getTransport("boat");
+        Transport transport = orderRide.getTransport("boat");
         // add a payment method (any kind that implements Payment)
         transport.setPayment(new CreditCardPayment());
         // run method in Transport is a Template method

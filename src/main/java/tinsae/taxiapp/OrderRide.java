@@ -1,6 +1,10 @@
 package tinsae.taxiapp;
 
-public class TaxiOrderService {
+/**
+ * Ride ordering service uses factory method to order transport based on parameter provided
+ * @author Kahsay Tinsae Ghilay
+ */
+public class OrderRide {
 
     /**
      * Factory method to order a certain type of transport
